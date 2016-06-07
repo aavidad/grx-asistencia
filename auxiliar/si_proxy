@@ -1,0 +1,26 @@
+[system/proxy/ftp]
+host='19.7.7.6'
+port=8080
+
+[system/proxy/http]
+host='19.7.7.6'
+port=8080
+authentication-password=password
+authentication-user=usuario
+enabled=true
+use-authentication=true
+
+[system/proxy/https]
+host='19.7.7.6'
+port=8080
+
+[system/proxy]
+
+mode='manual'
+use-same-proxy=true
+ignore-hosts=['localhost', '127.0.0.0/8', '::1']
+
+[system/proxy/socks]
+host='19.7.7.6'
+port=8080
+

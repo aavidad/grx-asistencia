@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Asistencia Técnica
+GenericName=Asistencia Técnica
+Comment=Aplicación para la gestión del parque Linux de la Diputación de Granada
+Exec=/usr/bin/grx-asistencia.sh
+Icon=grx-asistencia.png
+Terminal=false
+Type=Application
+Categories=Utility;Development;

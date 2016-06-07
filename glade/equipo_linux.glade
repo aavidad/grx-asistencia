@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.16.1 -->
+<interface>
+  <requires lib="gtk+" version="3.10"/>
+  <object class="GtkImage" id="Imagen_Cifrar">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/cifrar.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_Cups">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="margin_right">3</property>
+    <property name="pixbuf">/usr/share/grx/icons/cups.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_Firewall">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/firewall.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_Hardware">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/hardware-search.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_Instala">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/instala.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_Isl">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/log.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_LOG">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/log.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_NO">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-no</property>
+  </object>
+  <object class="GtkImage" id="Imagen_SI">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-dialog-question</property>
+  </object>
+  <object class="GtkImage" id="Imagen_Terminal">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/terminal.png</property>
+    <signal name="button-press-event" handler="onButtonPressed" swapped="no"/>
+  </object>
+  <object class="GtkImage" id="Imagen_Update">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/update.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_VncViewer">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/vncviewer.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_backup">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/download.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_captura">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/Printer_Floppy_Default.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_carpetas">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/folder-remote.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_dominio">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/grx-dominio.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_escaner">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/escaner.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_fabric3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="tooltip_text" translatable="yes">Muestra los usuarios del sistema</property>
+    <property name="pixbuf">/usr/share/grx/icons/usuarios.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_hp">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/hp.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_hp_plugin">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/hp.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_imprebusca">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/download.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_impresoras">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/web_impre.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_iniciar">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/si.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_mame">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/mame.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_monta_log">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/network-share.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_network">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/net.png</property>
+  </object>
+  <object class="GtkImage" id="Imagen_nmap">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/nmap.png</property>
+  </object>
+  <object class="GtkBox" id="box_equipo">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkBox" id="box3">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_left">5</property>
+        <property name="margin_right">5</property>
+        <property name="margin_top">15</property>
+        <property name="margin_bottom">5</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkExpander" id="expander2">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="expanded">True</property>
+            <child>
+              <object class="GtkGrid" id="grid1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="row_spacing">4</property>
+                <property name="column_spacing">4</property>
+                <property name="row_homogeneous">True</property>
+                <property name="column_homogeneous">True</property>
+                <child>
+                  <object class="GtkButton" id="Btn_vncviewer">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Escritorio Remoto</property>
+                    <property name="image">Imagen_VncViewer</property>
+                    <signal name="clicked" handler="on_Btn_vncviewer_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_iptables">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Iptables/escaner</property>
+                    <property name="image">Imagen_Firewall</property>
+                    <property name="xalign">0.50999999046325684</property>
+                    <property name="yalign">0.51999998092651367</property>
+                    <signal name="clicked" handler="on_Btn_iptables_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">1</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_terminal">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Ssh Terminal</property>
+                    <property name="image">Imagen_Terminal</property>
+                    <signal name="clicked" handler="on_Btn_terminal_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">1</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_instala">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Instalar Paquete</property>
+                    <property name="image">Imagen_Instala</property>
+                    <signal name="clicked" handler="on_Btn_instala_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="top_attach">1</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_cifrar">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Recuperar Carpeta Trabajo</property>
+                    <property name="image">Imagen_Cifrar</property>
+                    <signal name="clicked" handler="on_Btn_cifrar_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="top_attach">2</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_update">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Actualizar Equipo</property>
+                    <property name="image">Imagen_Update</property>
+                    <signal name="clicked" handler="on_Btn_update_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">2</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_network">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Configuracion de Red</property>
+                    <property name="image">Imagen_network</property>
+                    <property name="yalign">0.4699999988079071</property>
+                    <signal name="clicked" handler="on_Btn_network_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_backup">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Backup /etc</property>
+                    <property name="image">Imagen_backup</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">2</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_nmap">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Escaneo nmap</property>
+                    <property name="image">Imagen_nmap</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_usuarios">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="image">Imagen_fabric3</property>
+                    <property name="xalign">0.49000000953674316</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="top_attach">3</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_carpetas">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Monta la Carpeta de administrador</property>
+                    <property name="image">Imagen_carpetas</property>
+                    <signal name="clicked" handler="on_Btn_carpetas_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">3</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_dominio">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">GrX-dominio</property>
+                    <property name="image">Imagen_dominio</property>
+                    <property name="always_show_image">True</property>
+                    <signal name="clicked" handler="on_Btn_dominio_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">3</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <child type="label">
+              <object class="GtkLabel" id="label2">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Remoto</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="padding">5</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkExpander" id="expander1">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="expanded">True</property>
+            <child>
+              <object class="GtkGrid" id="grid3">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="row_spacing">4</property>
+                <property name="column_spacing">4</property>
+                <property name="row_homogeneous">True</property>
+                <property name="column_homogeneous">True</property>
+                <child>
+                  <object class="GtkButton" id="Btn_info">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Informacion del Equipo</property>
+                    <property name="image">Imagen_Hardware</property>
+                    <signal name="clicked" handler="on_Btn_info_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_log">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Log del Sistema</property>
+                    <property name="image">Imagen_LOG</property>
+                    <signal name="clicked" handler="on_Btn_log_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_monta_log">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Monta la carpeta de log</property>
+                    <property name="image">Imagen_monta_log</property>
+                    <signal name="clicked" handler="on_Btn_monta_log_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <child type="label">
+              <object class="GtkLabel" id="label1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Informacion</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="padding">5</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkExpander" id="expander3">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="expanded">True</property>
+            <child>
+              <object class="GtkGrid" id="grid2">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="row_spacing">4</property>
+                <property name="column_spacing">4</property>
+                <property name="row_homogeneous">True</property>
+                <property name="column_homogeneous">True</property>
+                <child>
+                  <object class="GtkButton" id="Btn_cups">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">CUPS</property>
+                    <property name="image">Imagen_impresoras</property>
+                    <signal name="clicked" handler="on_Btn_cups_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_impre">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Configurar Impresoras</property>
+                    <property name="image">Imagen_Cups</property>
+                    <signal name="clicked" handler="on_Btn_impre_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_impre_backup">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Guarda la configuracion del directorio  CUPS</property>
+                    <property name="image">Imagen_imprebusca</property>
+                    <property name="yalign">0.49000000953674316</property>
+                    <signal name="clicked" handler="on_Btn_impre_backup_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_hp">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Abre hp-setup como root</property>
+                    <property name="image">Imagen_hp</property>
+                    <signal name="clicked" handler="on_Btn_hp_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="top_attach">1</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_hp_plugin">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Abre hp-plugin en remoto</property>
+                    <property name="image">Imagen_hp_plugin</property>
+                    <signal name="clicked" handler="on_Btn_hp_plugin_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">1</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_escaner">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Instala/desinstala escaner</property>
+                    <property name="image">Imagen_escaner</property>
+                    <signal name="clicked" handler="on_Btn_escaner_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">1</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <child type="label">
+              <object class="GtkLabel" id="label3">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Impresoras/escaner</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="padding">5</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkExpander" id="expander5">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <child>
+              <object class="GtkGrid" id="grid4">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="row_spacing">4</property>
+                <property name="column_spacing">4</property>
+                <property name="row_homogeneous">True</property>
+                <property name="column_homogeneous">True</property>
+                <child>
+                  <object class="GtkColorButton" id="Btn_color">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Selecciona el color de fondo del panel</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Btn_mame">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="image">Imagen_mame</property>
+                    <property name="always_show_image">True</property>
+                    <signal name="clicked" handler="on_Btn_mame_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <child type="label">
+              <object class="GtkLabel" id="label6">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Color</property>
+                <property name="use_markup">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="padding">5</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="box1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkSpinner" id="spinner1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="estado">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkNotebook" id="notebook_equipo">
+        <property name="can_focus">True</property>
+        <property name="border_width">2</property>
+        <child>
+          <placeholder/>
+        </child>
+        <child type="tab">
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child type="tab">
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child type="tab">
+          <placeholder/>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="padding">6</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+  </object>
+  <object class="GtkImage" id="Imagen_reiniciar">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">/usr/share/grx/icons/recargar.png</property>
+  </object>
+  <object class="GtkButtonBox" id="botones_iptables">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="layout_style">start</property>
+    <child>
+      <object class="GtkButton" id="Btn_inicia">
+        <property name="label" translatable="yes">Iniciar</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="tooltip_text" translatable="yes">Inicia el cortafuegos</property>
+        <property name="image">Imagen_iniciar</property>
+        <property name="always_show_image">True</property>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="Btn_parar">
+        <property name="label">gtk-media-stop</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="tooltip_text" translatable="yes">Detiene el cortafuegos</property>
+        <property name="use_stock">True</property>
+        <property name="always_show_image">True</property>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="Btn_recargar">
+        <property name="label" translatable="yes">Reiniciar</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="tooltip_text" translatable="yes">Restart iptables</property>
+        <property name="image">Imagen_reiniciar</property>
+        <property name="xalign">0.47999998927116394</property>
+        <property name="always_show_image">True</property>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">2</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="Btn_config">
+        <property name="label">gtk-media-record</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="tooltip_text" translatable="yes">Guarda la configuracion del archivo de escaneres</property>
+        <property name="use_stock">True</property>
+        <property name="always_show_image">True</property>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="Btn_estado">
+        <property name="label" translatable="yes">Estado</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="tooltip_text" translatable="yes">Muestra la tabla de iptables</property>
+        <property name="image">Imagen_SI</property>
+        <property name="always_show_image">True</property>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">4</property>
+      </packing>
+    </child>
+  </object>
+</interface>

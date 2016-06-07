@@ -1,0 +1,27 @@
+Cambios de la release 0.2.25
+
+- Añadido telefonia ip
+
+
+Cambios de la release 0.2.24
+
+- Arreglado búsquedas usuarios
+
+- Añadido botón que instala escaner
+
+- Añadido botón que sube un archivo con los permisos de usuario en su carpeta personal
+
+- Añadido icono de la aplicación e integracion en el menu del equipo
+
+- Añadido nuevo campo de clave_cifrado en el area de claves debes poner la clave de cifrado
+  
+- Añadido nuevo campo de clave_remoto en el area de claves debes poner la clave de remoto
+
+
+Cambios de la release 0.2.23
+
+- Se ha arreglado la busqueda de usuarios que no estaban en el sistema autenticados.
+
+- Se ha arreglado problema con los permisos de .Private
+
+- Se ha añadido la funcion limpia que desmonta los directorios montados al salir de la aplicacion

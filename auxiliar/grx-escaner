@@ -1,0 +1,158 @@
+#!/bin/bash
+
+## Constantes ##
+Usuario='escaner'		#Usuario para el SMB y Sistema.
+Pass='password'			#Contraseña para SMB y Sistema.
+Path='/media/escaner'		#Ruta donde se guardaran los archivos Escaneados.
+PathTest='/tmp/escaner'		#Ruta temporal, para realizar un test de automontaje SMB.
+Share='escaner'			#Identificacion del recurso SMB
+ADFile='smbEscaner'		#Nombre del archivo que tendra el Acceso Directo en los Escritorios de los usuarios.
+## Constantes ##
+
+## Funcion Para crear / eliminar acceso directo en el escritorio, y el Explorador de Archivos (bookmarks).
+function AccesoDirecto() {
+case "$1" in
+	crea)
+		for HomeDir in /home/* ; do
+			FunRes=$(echo $HomeDir | grep -viq 'lost+found' 2>&1)
+			if [ $? -eq 0 ];then
+				FunRes=$(echo '[Desktop Entry]' > $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'Type=Application' >> $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'Icon=simple-scan' >> $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'Name=Escaner' >> $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'Name[es]=Escaner' >> $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'GenericName=Escaner' >> $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'GenericName[es]=Escaner' >> $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'Comment=Escaner' >> $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'Comment[es]=Escaner' >> $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'Categories=FileManager;Utility;Core;GTK;' >> $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'Exec=pcmanfm '$Path >> $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'StartupNotify=true' >> $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'Terminal=false' >> $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'MimeType=inode/directory;' >> $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'Name[es_ES]=Escaner' >> $HomeDir/Escritorio/$ADFile.desktop 2>&1)
+				FunRes=$(echo 'file://'$Path ${Share^} >> $HomeDir/.config/gtk-3.0/bookmarks 2>&1)
+			fi
+		done
+		;;
+	elimina)
+		#elimina
+		FunRes=$(find /home/ -name $ADFile.desktop -exec rm {} \; 2>&1)
+		for HomeDir in /home/* ; do
+			FunRes=$(echo $HomeDir | grep -viq 'lost+found' 2>&1)
+			if [ $? -eq 0 ];then
+				FunRes=$(sed -ie "/file:\/\/$(echo $Path|awk '{gsub("/","\/"); print}')/d" $HomeDir/.config/gtk-3.0/bookmarks 2>&1)
+			fi
+		done
+		;;
+	*)
+		exit
+		;;
+esac
+}
+
+## Funcion muestra el estado del servicio y Su correcta configuracion.
+function MuestraEstado() {
+case $1 in
+	0)	## Esta Desactivado
+		SrvList="FALSE Activado 1 TRUE Desactivado 0"
+		ZenRes=$(zenity --width=350 --height=150 --title='Configurador de la Carpeta Compartida Escaner' --text='Estado del servicio:' --list --hide-header --print-column=3 --hide-column=3 --radiolist --column='estado1' --column='estado2' --column='salida' $SrvList)
+		if [ $? -eq 1 ];then ZenRes=0; fi
+		;;
+	1)	## Esta Activado
+		SrvList="TRUE Activado 1 FALSE Desactivado 0"
+		ZenRes=$(zenity --width=350 --height=150 --title='Configurador de la Carpeta Compartida Escaner' --text='Estado del servicio:' --list --hide-header --print-column=3 --hide-column=3 --radiolist --column='estado1' --column='estado2' --column='salida' $SrvList)
+		if [ $? -eq 1 ];then ZenRes=1; fi
+		;;
+	*)
+		exit
+		;;
+esac
+## Resultado 0 Desactiva 1 Activa
+echo $ZenRes
+}
+
+## Funcion que verifica el estado del servicio.
+function SrvEstado {
+	FunReturn=0
+	FunRes=$(id -u $Usuario 2>&1)
+		if [ $? -eq 0 ];then
+		if [ -d $Path ]; then
+		if [ $(ls -dn $Path|awk '{print $3$4}' 2>&1) -eq 96910000 ]; then
+		if [ $(ls -dn $Path|awk '{print $1}' 2>&1) = "drwxrwx---" ]; then
+			FunRes=$(smbpasswd -e $Usuario 2>&1|grep -qi 'enabled user')
+		if [ $? -eq 0 ];then
+			FunRes=$(mkdir -p $PathTest 2>&1)
+			FunRes=$(mount -t cifs //127.0.1.1/$Share -o username=$Usuario,password=$Pass,workgroup=$HOSTNAME $PathTest 2>&1)
+		if [ $? -eq 0 ];then
+			FunRes=$(echo "OK" > $PathTest/smb_test.txt 2>&1)
+		if [ $? -eq 0 ];then
+			FunRes=$(rm $PathTest/smb_test.txt 2>&1)
+		if [ $? -eq 0 ];then
+			FunReturn=1
+	fi;fi;fi;fi;fi;fi;fi;fi
+	FunRes=$(umount -f $PathTest 2>&1)
+## Resultado 0 Desactivado 1 Activado
+echo $FunReturn
+}
+
+## Funcion que Crea y Activa el Servicio 
+function SrvCrea {
+	FunRes=$(SrvElimina 2>&1)
+	FunRes=$(userdel $Usuario 2>&1)
+	FunRes=$(useradd -M -r -s /bin/false -d $Path -u 969 -g 10000 -p $Pass $Usuario 2>&1)
+	FunRes=$(mkdir -p $Path 2>&1)
+	FunRes=$(chown -R 969.10000 $Path 2>&1)
+	FunRes=$(chmod -R 770 $Path 2>&1)
+	FunRes=$(echo "[$Share]" >> /etc/samba/smb.conf 2>&1)
+	FunRes=$(echo "	path = $Path" >> /etc/samba/smb.conf 2>&1)
+	FunRes=$(echo "	comment = $Share" >> /etc/samba/smb.conf 2>&1)
+	FunRes=$(echo "	writable = yes" >> /etc/samba/smb.conf 2>&1)
+	FunRes=$(echo "	valid users = $Usuario" >> /etc/samba/smb.conf 2>&1)
+	FunRes=$(echo "	create mode = 0660" >> /etc/samba/smb.conf 2>&1)
+	FunRes=$(echo "	directory mode = 0770" >> /etc/samba/smb.conf 2>&1)
+	FunRes=$(smbpasswd -L -x $Usuario 2>&1)
+	FunRes=$((echo $Pass; echo $Pass) | smbpasswd -s -L -a $Usuario 2>&1)
+	FunRes=$(service samba restart 2>&1)
+}
+
+## Funcion que elimina / desactiva el Servicio
+function SrvElimina {
+	FunRes=$(smbpasswd -L -x $Usuario 2>&1)
+	FunRes=$(sed -ie "/\[$Share\]/d" /etc/samba/smb.conf 2>&1)
+	FunRes=$(sed -ie "/path = $(echo $Path|awk '{gsub("/","\/"); print}')/d" /etc/samba/smb.conf 2>&1)
+	FunRes=$(sed -ie "/comment = $Share/d" /etc/samba/smb.conf 2>&1)
+	FunRes=$(sed -ie "/writable = yes/d" /etc/samba/smb.conf 2>&1)
+	FunRes=$(sed -ie "/valid users = $Usuario/d" /etc/samba/smb.conf 2>&1)
+	FunRes=$(sed -ie "/create mode = 0660/d" /etc/samba/smb.conf 2>&1)
+	FunRes=$(sed -ie "/directory mode = 0770/d" /etc/samba/smb.conf 2>&1)
+	FunRes=$(service samba restart 2>&1)
+}
+
+## Funcion del Programa Principal.
+function BashMain {
+EstadoPrevio=$(SrvEstado)
+EstadoDeseado=$(MuestraEstado $EstadoPrevio)
+if [ "$EstadoPrevio" != "$EstadoDeseado" ];then
+	if [ $EstadoDeseado -eq 0 ];then
+		#Descativa Servicio
+		SrvElimina
+		AccesoDirecto elimina
+	else
+		#Activa Servicio
+		SrvCrea
+		AccesoDirecto crea
+	fi
+fi
+}
+
+## Programa Principal.
+
+BashMain #Principal
+
+#SrvEstado -> Entregra 0 , 1
+#MuestraEstado  <- Recibe  0 , 1
+#SrvCrear
+#SrvElimina
+#AccesoDirecto <- Recibe crea , Elimina
+

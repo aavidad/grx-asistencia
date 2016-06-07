@@ -1,0 +1,316 @@
+Package: grx-bienvenido
+Package: lynx
+Version: 0.6.2015
+Architecture: all
+Maintainer: Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Depends: python (>= 2.4), python (<< 3), python-gtk2, python-glade2, python-webkit, python-configobj, grx-demonio
+Homepage: https://incidencias.dipgra.es
+Priority: optional
+Section: grx
+Filename: pool/main/g/grx-bienvenido/grx-bienvenido_0.6.2015_all.deb
+Size: 5912180
+SHA256: 4302225f06f2002072433c5f0dfce7a18e7c4b7d9a225c922422c8d7616aef77
+SHA1: e9f6c2e5333035c209ee8f8f841d0cce00c96e67
+MD5sum: 67df2acb1a457b978fafb6b1c29cb2a7
+Description: Pantalla de aplicaciones de Servicios Sociales.
+
+Package: grx-cifrar
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Architecture: all
+Version: 0.7.15
+Depends: ecryptfs-utils, grx-dominio
+Priority: standard
+Section: grx
+Filename: pool/main/g/grx-cifrar/grx-cifrar_0.7.15_all.deb
+Size: 2608
+SHA256: 4d88d05bb177e2e88a2bbfb745b15c33b875f048cb638a153b942b1b3d076f2f
+SHA1: c1dc4f2ac3a8e85d60dbe5932987ffbf15e9157e
+MD5sum: 8924e623f12957d02a32466bb85ed2c5
+Description: Paquete de configuracion del cifrado.
+
+Package: grx-demonio
+Version: 0.4.2015
+Architecture: all
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Homepage: https://incidencias.dipgra.es/
+Priority: optional
+Section: grx
+Filename: pool/main/g/grx-demonio/grx-demonio_0.4.2015_all.deb
+Size: 2950
+SHA256: a4f096106573b0ce7d40ec1f111a33999fe69606b94154a772980b955d232e67
+SHA1: 121ecaee8b98249077a229d893d054afc8e77577
+MD5sum: d8186ebaa29d28fc8c9a0f9ff0220f45
+Description: Demonio GrX.  Actualiza cada cierto tiempo la información del sistema, y más.
+
+Package: grx-dominio
+Version: 0.9.2015
+Architecture: all
+Maintainer:Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Installed-Size: 9600
+Depends: dialog, krb5-auth-dialog, ldap-utils, winbind, libnss-winbind, libpam-winbind, libwbclient0, libsasl2-modules-gssapi-mit, libsss-nss-idmap0, cifs-utils, smbclient, keyutils, numlockx
+Provides: grx-dominio
+Replaces: grx-dominio
+Homepage: https://incidencias.dipgra.es
+Priority: standard
+Section: grx
+Filename: pool/main/g/grx-dominio/grx-dominio_0.9.2015_all.deb
+Size: 5796
+SHA256: 3d115688ae306fdfda37e84d6b80c39fcf9362716267e3fd478dacec829409b6
+SHA1: c8aaac33e207bab07ccb35e348f74dbc27162236
+MD5sum: 23d7889135acf73fba45cd553a5d0a7a
+Description: Integracion en el dominio GRX.
+
+Package: grx-firefox
+Version: 0.5.2015
+Architecture: all
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Installed-Size: 19000
+Depends: firefox,firefox-locale-es
+Provides: grx-firefox
+Replaces: grx-firefox
+Homepage: https://incidencias.dipgra.es
+Priority: optional
+Section: grx
+Filename: pool/main/g/grx-firefox/grx-firefox_0.5.2015_all.deb
+Size: 7224284
+SHA256: 4c36bdb1329b2445c5b0c609cb8f65d6071b326611a1faa69fb2edea805bcf1b
+SHA1: ff5529d6d1c82c1743b27bcac3a8ad5a2231e623
+MD5sum: 7519c5847c0b061f2801584a5eaf08f8
+Description: Configura Firefox con todo lo necesario, Marcadores, y demas personalizaciones mas Flash-Player
+
+Package: grx-ganes
+Version: 0.6
+Maintainer: Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Architecture: all
+Priority: optional
+Section: grx
+Filename: pool/main/g/grx-ganes/grx-ganes_0.6_all.deb
+Size: 15619210
+SHA256: 87c6aa5871f8371aa17dfcf367c32c5b1291265df5421403b91d603c116ab85f
+SHA1: a0fb6bd6d62b2c147414280f8f0b4cf051943018
+MD5sum: 451cdce025115de2816943234c8f3959
+Description: Ganes, aplicacion para la gestión de albaranes de correos
+Depends: openjdk-7-jre
+Homepage: http://incidencias.dipgra.es/
+
+Package: grx-instala
+Version: 0.7.2015
+Architecture: all
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Depends: zenity
+Replaces: grx-tools
+Homepage: https://incidencias.dipgra.es
+Priority: standard
+Section: grx
+Filename: pool/main/g/grx-instala/grx-instala_0.7.2015_all.deb
+Size: 4656
+SHA256: 48c3b122328252b866e1af5404bd2fdca61a7e74f0d49f95ec7503802de6212b
+SHA1: 82a4ec94f015451a6f6d5056c3e7c3eb92004f5e
+MD5sum: 5bde502c35569cd55226e3773b522785
+Description: Facilitador de la instalacion de paquetes GRX.
+
+Package: grx-iptables
+Version: 2016.01.28
+Architecture: all
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Homepage: https://incidencias.dipgra.es/
+Priority: required
+Section: grx
+Filename: pool/main/g/grx-iptables/grx-iptables_2016.01.28_all.deb
+Size: 2590
+SHA256: 8d97040695027b2e4f0ed380f007a118f5a84d20bd3b0aaf3bb9b7f3da68fe02
+SHA1: 91187f9a8a017f7b33fb95a6877582c5f93a5c0f
+MD5sum: f047f12c0ab1dd396a2c79c0bf18d2f6
+Description: Paquete de configuracion de iptables 
+
+Package: grx-konekta
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Architecture: amd64
+Version: 0.6.2015
+Depends: libc6 (>= 2.5-0ubuntu1), libpcap0.8 (>=0.9.3-1), perl-modules, perl, python-appindicator, gir1.2-appindicator3-0.1, libnotify-bin
+Conflicts: moreutils
+Provides: libnet, parallel
+Homepage: https://incidencias.dipgra.es/
+Priority: standard
+Section: grx
+Filename: pool/main/g/grx-konekta/grx-konekta_0.6.2015_amd64.deb
+Size: 316328
+SHA256: 8bfeda628720ca8dfb0c6fc06fbdf1af89fb3e621884003e6c6197d95e95a4e4
+SHA1: b9d4229ff1aad1f04e350c06971761f186d06005
+MD5sum: 5a5ab2f5a0a0ae38b2f35de0fe53eee4
+Description: Paquete de configuracion de red en Mulhacen, instala libnet, arping2 y parallel como complemento
+
+Package: grx-nivalis
+Version: 0.6.2015
+Architecture: all
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Depends: google-chrome-stable
+Replaces: grx-nivalis
+Homepage: https://incidencias.dipgra.es
+Priority: optional
+Section: grx-nivalis
+Filename: pool/main/g/grx-nivalis/grx-nivalis_0.6.2015_all.deb
+Size: 70608
+SHA256: 4ffa3b6b40ef658aa402d1ad7745d32510fefddac70ad95bf236abd74291675c
+SHA1: a33599ab63f4338c1dff9bc69cf452087e966082
+MD5sum: 5d02b5858b8e291be5bd12532b6f559b
+Description: Configura Google-Chrome como APP para acceder a nivalis.
+
+Package: grx-ocs
+Version: 0.6.2015
+Architecture: all
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Depends: ocsinventory-agent
+Replaces: grx-ocs
+Homepage: https://incidencias.dipgra.es/
+Priority: standard
+Section: grx
+Filename: pool/main/g/grx-ocs/grx-ocs_0.6.2015_all.deb
+Size: 966
+SHA256: d9751801ad0cd4e4e3e8d639f17980a533a464b0067ee28f8258db1a535d5bf4
+SHA1: 14f433d2d6ff7b9599ba3b326661a04b2b707fea
+MD5sum: 3a9bc2244adc710b5c1c6758b67df6c6
+Description: Configurador cd OcsInventory-Agent para Diputacion de Granada.
+
+Package: grx-ofimatica
+Version: 0.3.2015
+Architecture: all
+Maintainer: Atención Inforatica a Usuarios <atencionusuarios@dipgra.es>
+Installed-Size: 432000
+Depends:libreoffice,libreoffice-l10n-es,libreoffice-help-es,aspell-es,myspell-es,ispanish
+Provides: grx-ofimatica
+Replaces: grx-ofimatica
+Homepage: https://incidencias.dipgra.es
+Priority: optional
+Section: grx
+Filename: pool/main/g/grx-ofimatica/grx-ofimatica_0.3.2015_all.deb
+Size: 180471112
+SHA256: 796c23fab50727066479951b9f0391b4f45614eb05f2e36e3b7d92b46e729db7
+SHA1: 61dd62535f92b86807fa7606951120f5d49e1dd1
+MD5sum: d237935f3c7b3ad71593e1b2d680e9c6
+Description: Metapaquete Libreoffice con ayuda y complementos españo, mas fuentes.
+
+Package: grx-otros
+Version: 0.7.2015
+Architecture: amd64
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Depends: linux-firmware, linux-firmware-nonfree, icedtea-7-plugin, nmap, gnome-screenshot, gthumb, vlc, iperf, pdfmod, unrar
+Homepage: https://incidencias.dipgra.es/
+Priority: optional
+Section: grx
+Filename: pool/main/g/grx-otros/grx-otros_0.7.2015_amd64.deb
+Size: 914
+SHA256: 9d52bda621e361a601062d48f0881cecdaf980d155bdf0f4d7cc051cd4dc0b7a
+SHA1: e059e211304c78546c97f65ca41ccea75f96f025
+MD5sum: 2baa011f0c36af83866420d9a46f1cf3
+Description: Instalador de las herramientas extra de diputacion
+
+Package: grx-pdf
+Version: 0.3
+Architecture: all
+Depends: libgtk2.0-0:i386, libnss3-1d:i386, libnspr4-0d:i386, lib32nss-mdns, libxml2:i386, libxslt1.1:i386, libstdc++6:i386, nscd, cups-bsd, cups-pdf
+Maintainer: Adobe Systems, GrX
+Priority: extra
+Section: publishing
+Filename: pool/main/g/grx-pdf/grx-pdf_0.3_all.deb
+Size: 42813956
+SHA256: 9483f4dae481a5b90e5917441659d932928ada35ff7fd7803f20601954e550b8
+SHA1: 828840112f45e1a4aba120f3d350674e8afbeece
+MD5sum: a09c9fcc7d7e82d0ac6cd96a6ab3e6cf
+Description: Adobe Acrobat Reader configurado para que pueda utilizarse en la Distribucion GrX, mas La impresor PDF de Cups
+Installed-Size: 183203
+
+Package: grx-perfil
+Version: 0.9.2015
+Architecture: all
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Installed-Size: 5400
+Depends: unity-greeter
+Provides: grx-perfil
+Replaces: grx-perfil
+Homepage: https://incidencias.dipgra.es
+Priority: optional
+Section: grx
+Filename: pool/main/g/grx-perfil/grx-perfil_0.9.2015_all.deb
+Size: 3777084
+SHA256: 49c4c1d80d5ffb5f87f4bd0f085edfe20f3fc218dada59788f0530b54980de4f
+SHA1: eee9fdb69789d216b91a8468b22646b8066adca8
+MD5sum: f2cde0debe2b74d97fd4f1e44f55c9fa
+Description: Herramientas y configuracion del perfil de usuario, accesos directos y personalizacion de logos y wallpapers.
+
+Package: grx-puppet
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Architecture: all
+Version: 0.5.2
+Homepage: https://incidencias.dipgra.es/
+Depends: puppet
+Priority: optional
+Section: grx
+Filename: pool/main/g/grx-puppet/grx-puppet_0.5.2_all.deb
+Size: 1256
+SHA256: c97fc57125e82ed0f8a8ded831388f6302274260e543c3e4f944bc4340ac3fa0
+SHA1: d6988b5d209ca1bb8e937f79cc4297b4e9d2b1b1
+MD5sum: 658eba5ee64796802d552d3a05b6cfaa
+Description: Paquete de configuracion del agente puppet
+
+Package: grx-remoto
+Version: 0.6.2015
+Architecture:all
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Depends: vino, ssh
+Replaces: grx-remoto
+Homepage: https://incidencias.dipgra.es
+Priority: standard
+Section: grx
+Filename: pool/main/g/grx-remoto/grx-remoto_0.6.2015_all.deb
+Size: 4698864
+SHA256: e2e4a2b8a5a0bfbe2ef727b4af581cfe08457f8fc345b04c7bbbfc8e1283e21c
+SHA1: d5cc9749c51a5351316c1d2c45aa09ba164330fa
+MD5sum: 374beabdeabe318718a30b14fa54de59
+Description: Herramientas y configuracion para poder ofreces asistenca ecnica a los usuarios. ssh vino-server isl.
+
+Package: grx-sources
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Architecture: all
+Version: 0.7.2015
+Priority: standard
+Section: grx
+Filename: pool/main/g/grx-sources/grx-sources_0.7.2015_all.deb
+Size: 12846
+SHA256: 5fd46b1f730c0fa30c7a1fec841e69f97fb4d882ca6f9842c85ba5f8ea9e4843
+SHA1: cf26e79d78753f524898093e2de181be8917c9c9
+MD5sum: c0fab5d4e072e7b111060fb5225c102b
+Description: Paquete de configuracion de los repositorios
+
+Package: grx-thunderbird
+Version: 0.6.2015
+Architecture: all
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Installed-Size: 5200
+Depends: thunderbird, thunderbird-locale-es
+Provides: grx-thunderbird
+Replaces: grx-thunderbird
+Homepage: https://incidencias.dipgra.es
+Priority: optional
+Section: grx
+Filename: pool/main/g/grx-thunderbird/grx-thunderbird_0.6.2015_all.deb
+Size: 229702
+SHA256: b256b8ee8d8607b6ac24b25546bd413d0036e2359fbdf5cf8cb90de7e77a80b2
+SHA1: 680d967999e35d5037a25c2a4f4b75dbf5128921
+MD5sum: 34b423879bbf6c0de2f5269a1d4de9ef
+Description: Autoconfiguracion Thunderbird para la correcta integracion con la red de La Diputacion Provincial de Granada.
+
+Package: grx-veleta
+Maintainer: Diputación Provincial de Granada, Atención Informática a Usuarios <atencionusuarios@dipgra.es>
+Architecture: all
+Version: 0.1.2
+Depends: cifs-utils, libpam-mount, grsync
+Priority: optional
+Section: grx
+Filename: pool/main/g/grx-veleta/grx-veleta_0.1.2_all.deb
+Size: 2356
+SHA256: 4ac32fbf205e98a5e265a10366a8948fa5414e110e46bc7d83b7208b816f4721
+SHA1: 69c7395e7967329adb327cceb077cff5c47a72af
+MD5sum: efe334cbc1dbcbbaf140fdc4595bb2a8
+Description: Monta la carpeta personal de los usuarios en veleta.
+
