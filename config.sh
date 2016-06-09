@@ -64,7 +64,7 @@ if (python setup.py --command-packages=stdeb.command sdist_dsc --depends $depend
            case $sn in
                 Si )   if (sudo dpkg -i deb_dist/python-grx-asistencia_$version-1_all.deb); then
                                 echo "Instalado el deb, cambiamos los permisos"
-                                if (sudo chmod 755 /usr/share/grx/ldap/*)&&(sudo chmod 777 /usr/share/grx/auxiliar/Packages)
+                                if (sudo chmod 755 /usr/share/grx/ldap/*)&&(sudo chmod 777 /usr/share/grx/auxiliar/Packages)&&(sudo chmod 777 /usr/share/grx/auxiliar/sedes.txt.csv)
                                 then 
                                         if (sudo grep "ALL ALL= NOPASSWD: /usr/bin/sudo-asistencia-monta.sh" /etc/sudoers)
                                         then

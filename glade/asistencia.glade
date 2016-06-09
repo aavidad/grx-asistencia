@@ -1180,7 +1180,18 @@
                                           <placeholder/>
                                         </child>
                                         <child>
-                                          <placeholder/>
+                                          <object class="GtkButton" id="Btn_actualiza_ip_sedes">
+                                            <property name="label" translatable="yes">Actualiza sedes_ip</property>
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="receives_default">True</property>
+                                            <signal name="clicked" handler="on_Btn_actualiza_ip_sedes_clicked" swapped="no"/>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">4</property>
+                                          </packing>
                                         </child>
                                         <child>
                                           <object class="GtkColorButton" id="Btn_color">
