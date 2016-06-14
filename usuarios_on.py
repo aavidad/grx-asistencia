@@ -1,16 +1,15 @@
 from __future__ import with_statement
-from fabric.api import settings, abort, run, env, sudo, local, get , put, hosts
-from fabric.contrib.console import confirm
-from gi.repository import Gtk,Gdk
-import os,subprocess
+from fabric.api import settings, sudo, get, put
+from gi.repository import Gtk, Gdk
+import os, subprocess
 import time
-import tablabel,libreria
+import tablabel, libreria
 
 
-atencion=Gtk.MessageType.WARNING
-info=Gtk.MessageType.INFO
-error=Gtk.MessageType.ERROR
-pregunta=Gtk.MessageType.QUESTION
+atencion = Gtk.MessageType.WARNING
+info = Gtk.MessageType.INFO
+error = Gtk.MessageType.ERROR
+pregunta = Gtk.MessageType.QUESTION
 
 #def convierte_fecha(timestamp):
 #     epoch_start = datetime(year=1601, month=1,day=1)
@@ -25,93 +24,82 @@ class Usuarios(Gtk.Grid):
         Gtk.Grid.__init__(self, row_spacing=20, column_spacing=20)
         builder = Gtk.Builder()
         builder.add_from_file("/usr/share/grx/glade/usuario_on.glade")
-	box_usuario = builder.get_object("box_usuario")
-	notebook_usuario = builder.get_object("notebook_usuario")
-	spinner = builder.get_object("spinner")
-	estado = builder.get_object("estado")
-	entry_nombre = builder.get_object("entry_nombre")
-	entry_usuario = builder.get_object("entry_usuario")
-	entry_dir = builder.get_object("entry_dir")
-	entry_veleta = builder.get_object("entry_veleta")
-	entry_estado = builder.get_object("entry_estado")
-	entry_caduca = builder.get_object("entry_caduca")
-	entry_correo = builder.get_object("entry_correo")
-	entry_clave_antigua = builder.get_object("entry_clave_antigua")
-	entry_clave_nueva = builder.get_object("entry_clave_nueva")
-	entry_intentos = builder.get_object("entry_intentos")
-	entry_mensaje=builder.get_object("entry_mensaje")
-	entry_usuario.set_text(nombre)
-	entry_dir.set_text("/home/"+nombre)
-	
+        box_usuario = builder.get_object("box_usuario")
+        notebook_usuario = builder.get_object("notebook_usuario")
+        spinner = builder.get_object("spinner")
+        estado = builder.get_object("estado")
+        entry_nombre = builder.get_object("entry_nombre")
+        entry_usuario = builder.get_object("entry_usuario")
+        entry_dir = builder.get_object("entry_dir")
+        entry_veleta = builder.get_object("entry_veleta")
+        entry_estado = builder.get_object("entry_estado")
+        entry_caduca = builder.get_object("entry_caduca")
+        entry_correo = builder.get_object("entry_correo")
+        entry_clave_antigua = builder.get_object("entry_clave_antigua")
+        entry_clave_nueva = builder.get_object("entry_clave_nueva")
+        entry_intentos = builder.get_object("entry_intentos")
+        entry_mensaje=builder.get_object("entry_mensaje")
+        entry_usuario.set_text(nombre)
+        entry_dir.set_text("/home/"+nombre)
 
-	entry_cambio_clave = builder.get_object("entry_cambio_clave")
-	entry_cambio_clave.connect("icon-press",self.on_entry_cambio_clave,ip,usuario,puerto,password,tecnico,password_tecnico,nombre,entry_clave_nueva,entry_clave_antigua,spinner,estado)
+        entry_cambio_clave = builder.get_object("entry_cambio_clave")
+        entry_cambio_clave.connect("icon-press",self.on_entry_cambio_clave,ip,usuario,puerto,password,tecnico,password_tecnico,nombre,entry_clave_nueva,entry_clave_antigua,spinner,estado)
 
-	entry_estado.connect("icon-press",self.on_entry_estado_icon_press, usuario,nombre,ip ,puerto,password,tecnico,password_tecnico)
-	entry_correo.connect("icon-press",self.on_entry_correo_icon_press)
+        entry_estado.connect("icon-press",self.on_entry_estado_icon_press, usuario,nombre,ip ,puerto,password,tecnico,password_tecnico)
+        entry_correo.connect("icon-press",self.on_entry_correo_icon_press)
 
-	entry_veleta.connect("icon-press",self.on_entry_veleta_icon_press, ip, usuario,nombre, puerto,password,tecnico,password_tecnico)
+        entry_veleta.connect("icon-press",self.on_entry_veleta_icon_press, ip, usuario,nombre, puerto,password,tecnico,password_tecnico)
 
-	entry_mensaje.connect("icon-press",self.on_entry_mensaje_icon_press,ip,puerto,usuario,password,nombre,display)
-	
-	Btn_captura = builder.get_object("Btn_captura")
-	Btn_captura.connect("clicked", self.on_Btn_captura_clicked,ip,usuario,nombre,puerto,password,display)
+        entry_mensaje.connect("icon-press",self.on_entry_mensaje_icon_press,ip,puerto,usuario,password,nombre,display)
 
-	Btn_usado = builder.get_object("Btn_usado")
-	Btn_usado.connect("clicked", self.on_Btn_usado_clicked,nombre, ip,usuario,puerto,password,display)
+        Btn_captura = builder.get_object("Btn_captura")
+        Btn_captura.connect("clicked", self.on_Btn_captura_clicked,ip,usuario,nombre,puerto,password,display)
 
+        Btn_usado = builder.get_object("Btn_usado")
+        Btn_usado.connect("clicked", self.on_Btn_usado_clicked,nombre, ip,usuario,puerto,password,display)
 
-	Btn_Config_pam_mount = builder.get_object("Btn_Config_pam_mount")
-	Btn_Config_pam_mount.connect("clicked", self.on_Btn_Config_pam_mount_clicked,ip,usuario,nombre,puerto,password,notebook_usuario)
-	
-	Btn_sonido = builder.get_object("Btn_sonido")
-	Btn_sonido.connect("clicked", self.on_Btn_sonido_clicked,nombre,ip,usuario,puerto,password,display)
+        Btn_Config_pam_mount = builder.get_object("Btn_Config_pam_mount")
+        Btn_Config_pam_mount.connect("clicked", self.on_Btn_Config_pam_mount_clicked,ip,usuario,nombre,puerto,password,notebook_usuario)
 
-	Btn_video = builder.get_object("Btn_video")
-	Btn_video.connect("clicked", self.on_Btn_video_clicked,nombre,ip,usuario,puerto,password,display)
-	
+        Btn_sonido = builder.get_object("Btn_sonido")
+        Btn_sonido.connect("clicked", self.on_Btn_sonido_clicked,nombre,ip,usuario,puerto,password,display)
 
-	Btn_Info = builder.get_object("Btn_Info")
-	Btn_Info.connect("clicked", self.on_Btn_Info_clicked,usuario,nombre,ip ,puerto,password,tecnico,password_tecnico,entry_usuario,entry_veleta,entry_estado,entry_nombre,entry_caduca,entry_correo,entry_intentos,notebook_usuario)
-	
-	Btn_Carpeta = builder.get_object("Btn_Carpeta")
-	Btn_Carpeta.connect("clicked", self.on_Btn_Carpeta_clicked,usuario,nombre,ip,puerto,password,clave_cifrado,spinner,estado)
+        Btn_video = builder.get_object("Btn_video")
+        Btn_video.connect("clicked", self.on_Btn_video_clicked,nombre,ip,usuario,puerto,password,display)
 
+        Btn_Info = builder.get_object("Btn_Info")
+        Btn_Info.connect("clicked", self.on_Btn_Info_clicked,usuario,nombre,ip ,puerto,password,tecnico,password_tecnico,entry_usuario,entry_veleta,entry_estado,entry_nombre,entry_caduca,entry_correo,entry_intentos,notebook_usuario)
 
-	Btn_Restaura = builder.get_object("Btn_Restaura")
-	Btn_Restaura.connect("clicked", self.on_Btn_Restaura_clicked,usuario,nombre,ip,puerto,password,clave_cifrado,spinner,estado)
+        Btn_Carpeta = builder.get_object("Btn_Carpeta")
+        Btn_Carpeta.connect("clicked", self.on_Btn_Carpeta_clicked,usuario,nombre,ip,puerto,password,clave_cifrado,spinner,estado)
 
+        Btn_Restaura = builder.get_object("Btn_Restaura")
+        Btn_Restaura.connect("clicked", self.on_Btn_Restaura_clicked,usuario,nombre,ip,puerto,password,clave_cifrado,spinner,estado)
 
-	Btn_archivo = builder.get_object("Btn_archivo")
-	Btn_archivo.connect("clicked", self.on_Btn_archivo_clicked,ip, usuario, puerto,password,nombre)
+        Btn_archivo = builder.get_object("Btn_archivo")
+        Btn_archivo.connect("clicked", self.on_Btn_archivo_clicked,ip, usuario, puerto,password,nombre)
 
-
-	self.on_Btn_Info_clicked("NULL", usuario,nombre,ip ,puerto,password,tecnico,password_tecnico, entry_usuario,entry_veleta,entry_estado,entry_nombre,entry_caduca,entry_correo,entry_intentos,notebook_usuario)
-	
+        self.on_Btn_Info_clicked("NULL", usuario,nombre,ip ,puerto,password,tecnico,password_tecnico, entry_usuario,entry_veleta,entry_estado,entry_nombre,entry_caduca,entry_correo,entry_intentos,notebook_usuario)
         self.add(box_usuario)
 
     def mensaje(self,texto,cabecera,tipo):
         dialog = libreria.Mensaje(texto,cabecera,tipo)
-	dialog.run()
+        dialog.run()
         dialog.destroy()
 
-
-
     def on_entry_veleta_icon_press(self, widget,enum,void, ip, usuario,nombre, puerto,password,tecnico,password_tecnico):
-
-		tmp_ruta = subprocess.check_output (['mktemp','-d'])
-		
-		command = "mount.cifs //veleta.grx/usuarios/ss/ "+tmp_ruta+" -o user="+tecnico+",domain=grx,password="+password_tecnico
-		print command
-		p = os.system('gksudo '+  command)
-		resultado = subprocess.check_output(['find', '.', '-maxdepth', '2', '-type', 'd', '-iname', nombre,'r',1])
-		if resultado=="":
-			print "no encontrado"
-			print resultado
-		else:
-			print "encontrado"
-			print resultado
-			entry_veleta.set_text(resultado)
+            tmp_ruta = subprocess.check_output (['mktemp','-d'])
+            command = "mount.cifs //veleta.grx/usuarios/ss/ "+tmp_ruta+" -o user="+tecnico+",domain=grx,password="+password_tecnico
+            print command
+            p = os.system('gksudo '+  command)
+            resultado = subprocess.check_output(['find', '.', '-maxdepth', '2', '-type', 'd', '-iname', nombre,'r',1])
+            if resultado=="":
+                print "no encontrado"
+                print resultado
+            else:
+                print "encontrado"
+                print resultado
+                entry_veleta.set_text(resultado)
 
 
 
@@ -188,13 +176,13 @@ class Usuarios(Gtk.Grid):
 	os.system("xdg-email "+widget.get_text())
 
     def on_Btn_captura_clicked(self, widget, ip,usuario,nombre,puerto,password,display):
- 
+
      with settings(host_string=ip,port=puerto,password=password,user=usuario):
 		try:	
 			ruta_local="/tmp/captura-"+nombre+"-"+ip+time.strftime("%H:%M:%S")+time.strftime("%d/%m/%y")+".png"	
 			sudo (' DISPLAY='+display+' XAUTHORITY=/home/'+nombre+'/.Xauthority scrot /tmp/captura.png')
 			get (remote_path="/tmp/captura.png",local_path=ruta_local)
-			os.system('xdg-open '+ruta_local+'&') 
+			os.system('xdg-open '+ruta_local+'&')
 		except:
 			self.mensaje ("No se puede mostrar el escritorio remoto","ATENCION Se ha producido un ERROR:",error)
 		
@@ -248,7 +236,7 @@ class Usuarios(Gtk.Grid):
 	self.show_all()
 
 
-####################################################      
+####################################################
     def on_Btn_Info_clicked(self, widget, usuario,nombre,ip ,puerto,password,tecnico,password_tecnico,entry_usuario,entry_veleta,entry_estado,entry_nombre,entry_caduca,entry_correo,entry_intentos,notebook):
 	with settings(host_string=ip,port=puerto,password=password,user=usuario):
 		tecnico=tecnico.split("@")[0]
@@ -261,7 +249,7 @@ class Usuarios(Gtk.Grid):
 #		archi=open('/usr/share/grx/ldap/ldap','r')   ###En casa
 #		ldap = archi.read()		###En casa
 
-		ldap_lista=ldap.split("\n")    
+		ldap_lista=ldap.split("\n")
 
 		#####Busca y comprueba el estado de la cuenta
 		try:
@@ -285,7 +273,7 @@ class Usuarios(Gtk.Grid):
 #				if "path" in path:
 #					ruta=(path.split("=")[1]).strip()
 #					ruta=ruta.replace('"','')
-#					entry_veleta.set_text(ruta) 
+#					entry_veleta.set_text(ruta)
 			tmp_ruta = subprocess.check_output (['mktemp'])
 			comando=('gksudo "mount.cifs //veleta.grx/usuarios/ss/ "+tmp_ruta+" -o user="+tecnico+",domain=grx,password="+password_tecnico')
 			os.system(comando)
@@ -410,7 +398,7 @@ class Usuarios(Gtk.Grid):
 			tecnico=tecnico.split("@")[0]
 			validar_tecnico= subprocess.check_output (['/usr/share/grx/ldap/validar_tecnico.sh',tecnico, password_tecnico])
 			ldap= subprocess.check_output (['/usr/share/grx/ldap/ldap.sh',nombre])
-			ldap_lista=ldap.split("\n")    
+			ldap_lista=ldap.split("\n")
 
 			#######Busca el dn:
 			tmp=filter(lambda x:'dn:' in x, ldap_lista)
@@ -438,7 +426,7 @@ class Usuarios(Gtk.Grid):
 		try:	
 			datos=put (use_sudo=True, remote_path="/usr/bin/recupera_private.sh", local_path="/usr/bin/recupera_private.sh")
 			sudo ("chmod 700 /usr/bin/recupera_private.sh")
-			tmp_dir=sudo("/usr/bin/recupera_private.sh "+directorio+" "+clave_cifrado) 
+			tmp_dir=sudo("/usr/bin/recupera_private.sh "+directorio+" "+clave_cifrado)
 			if (tmp_dir=="ERROR") or (tmp_dir=="")or ("mount:" in tmp_dir):
 				self.mensaje ("No se ha podido montar la carpeta cifrada","ATENCION Se ha producido un ERROR:",error)
 				return
@@ -446,7 +434,7 @@ class Usuarios(Gtk.Grid):
 			os.system('sshfs -p '+puerto+' -o reconnect -C -o workaround=all '+usuario+'@'+ip+':'+tmp_dir+' '+monta)
 			os.system('xdg-open '+monta)
 		except:
-			self.mensaje("No se ha podido montar la carpeta en el equipo remoto","Atencion",atencion) 
+			self.mensaje("No se ha podido montar la carpeta en el equipo remoto","Atencion",atencion)
 
 
     def on_Btn_Restaura_clicked(self, widget, usuario,nombre,ip ,puerto,password,clave_cifrado,spinner,estado):
